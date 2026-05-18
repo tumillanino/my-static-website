@@ -5,7 +5,7 @@ role: "Senior Application Developer"
 location: "Sydney, Australia"
 summary: "I build practical software for teams that need dependable internal tools, better business processes, and systems that are easier to maintain. My work spans React, Next.js, JavaScript, PHP, Go, Power Platform, Python, SQL, and the connective work needed to turn messy workflows into usable applications."
 intro:
-  - "I am currently a Senior Application Developer at ANSTO, where I lead digitisation projects and maintain enterprise applications across modern and legacy stacks. A lot of my work sits between business process, application development, and long-term maintainability: replacing manual forms, improving internal systems, and building reusable components that other project teams can rely on."
+  - "I am currently a Senior Application Developer at ANSTO (The Australian Nuclear Science and Technology Organisation), where I lead digitisation projects and maintain enterprise applications across modern and legacy stacks. A lot of my work sits between business process, application development, and long-term maintainability: replacing manual forms, improving internal systems, and building reusable components that other project teams can rely on."
   - "Before ANSTO, I worked across application development, data analysis, reporting automation, and finance systems. That mix shaped how I approach software: understand the workflow first, reduce friction where it matters, and build tools that make the next version easier."
 skills:
   - "React and Next.js"

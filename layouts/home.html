@@ -61,5 +61,14 @@
       {{ end }}
     </div>
   </section>
-{{ end }}
 
+  <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+    <div class="section-heading">
+      <h2 id="contact-title">Contact Me</h2>
+      <p>For work enquiries, collaboration, or anything related to the projects listed here.</p>
+    </div>
+    <a class="contact-link" href="mailto:{{ site.Params.contactEmail }}">
+      {{ site.Params.contactEmail }}
+    </a>
+  </section>
+{{ end }}

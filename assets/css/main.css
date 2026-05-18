@@ -223,6 +223,31 @@ h3 {
   letter-spacing: 0.08em;
 }
 
+.contact-section {
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fffdfa;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  background: #8f3f2a;
+  color: #fffdfa;
+}
+
 .site-footer {
   display: flex;
   align-items: center;
@@ -265,4 +290,3 @@ h3 {
     margin-top: 0.7rem;
   }
 }
-
