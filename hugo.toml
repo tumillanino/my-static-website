@@ -1,0 +1,8 @@
+baseURL = 'https://my-static-site.pages.dev/'
+locale = 'en-AU'
+title = 'Anthony Tumia'
+disableKinds = ['rss', 'section', 'taxonomy', 'term']
+
+[params]
+  description = 'Anthony Tumia is a Sydney-based senior application developer building practical software across React, Next.js, PHP, Go, Power Platform, data automation, and Linux audio tooling.'
+  author = 'Anthony Tumia'

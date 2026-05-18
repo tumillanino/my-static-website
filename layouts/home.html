@@ -1,0 +1,65 @@
+{{ define "main" }}
+  <section class="hero" aria-labelledby="page-title">
+    <div class="hero-mark" aria-hidden="true">
+      <img src="/assets/images/anthony-mark.svg" alt="">
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">{{ .Params.role }} · {{ .Params.location }}</p>
+      <h1 id="page-title">{{ .Title }}</h1>
+      <p class="lede">{{ .Params.summary }}</p>
+    </div>
+  </section>
+
+  <section class="section prose-section" id="about" aria-labelledby="about-title">
+    <h2 id="about-title">About</h2>
+    {{ range .Params.intro }}
+      <p>{{ . }}</p>
+    {{ end }}
+  </section>
+
+  <section class="section" id="skills" aria-labelledby="skills-title">
+    <div class="section-heading">
+      <h2 id="skills-title">Skills</h2>
+      <p>The tools I reach for most often across application development, internal systems, and automation work.</p>
+    </div>
+    <ul class="skill-list" aria-label="Skills">
+      {{ range .Params.skills }}
+        <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+  </section>
+
+  <section class="section" id="experience" aria-labelledby="experience-title">
+    <div class="section-heading">
+      <h2 id="experience-title">Experience</h2>
+      <p>A practical path through application development, data automation, reporting, and finance systems.</p>
+    </div>
+    <div class="timeline">
+      {{ range .Params.experience }}
+        <article class="timeline-item">
+          <p class="period">{{ .period }}</p>
+          <h3>{{ .role }}</h3>
+          <p class="organisation">{{ .organisation }}</p>
+          <p>{{ .body }}</p>
+          <p class="tools">{{ .tools }}</p>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="section" id="projects" aria-labelledby="projects-title">
+    <div class="section-heading">
+      <h2 id="projects-title">Personal Work</h2>
+      <p>Outside work, I spend time on music production and software for Linux audio workflows.</p>
+    </div>
+    <div class="project-list">
+      {{ range .Params.projects }}
+        <article class="project-item">
+          <h3>{{ .title }}</h3>
+          <p>{{ .body }}</p>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}
+

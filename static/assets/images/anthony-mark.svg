@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Anthony Tumia monogram</title>
+  <desc id="desc">A simple AT monogram.</desc>
+  <rect width="160" height="160" rx="24" fill="#1f2933"/>
+  <path d="M40 116 71 42h18l31 74h-18l-7-18H65l-7 18H40Zm31-33h18L80 59l-9 24Z" fill="#f7f4ef"/>
+  <path d="M104 58V42h44v16h-14v58h-16V58h-14Z" fill="#d97757"/>
+</svg>
+

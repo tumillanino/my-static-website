@@ -1,0 +1,14 @@
+{
+  "name": "anthony-tumia-site",
+  "private": true,
+  "scripts": {
+    "build": "hugo",
+    "serve": "hugo server"
+  },
+  "devDependencies": {
+    "hugo-bin": "^0.161.1"
+  },
+  "hugo-bin": {
+    "buildTags": "extended"
+  }
+}
