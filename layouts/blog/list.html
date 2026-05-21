@@ -1,0 +1,23 @@
+{{ define "main" }}
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    <p class="lede">{{ .Description }}</p>
+  </header>
+
+  <section class="section" aria-label="Blog posts">
+    {{ $posts := .Pages.ByDate.Reverse }}
+    {{ if $posts }}
+      <div class="post-list">
+        {{ range $posts }}
+          <article class="post-item">
+            <p class="period">{{ .Date.Format "2 Jan 2006" }}</p>
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            {{ with .Description }}<p>{{ . }}</p>{{ end }}
+          </article>
+        {{ end }}
+      </div>
+    {{ else }}
+      <p class="empty-state">No posts yet. Add markdown files to <code>content/blog</code>, or set <code>BLOG_POST_URLS</code> or <code>BLOG_MANIFEST_URL</code> before running the build to pull posts from R2.</p>
+    {{ end }}
+  </section>
+{{ end }}

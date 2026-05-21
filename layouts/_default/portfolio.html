@@ -1,0 +1,75 @@
+{{ define "main" }}
+  <header class="page-header">
+    <p class="eyebrow">{{ .Params.role }} · {{ .Params.location }}</p>
+    <h1>{{ .Title }}</h1>
+    <p class="lede">{{ .Params.summary }}</p>
+  </header>
+
+  <section class="section prose-section" aria-labelledby="about-title">
+    <h2 id="about-title">About</h2>
+    {{ range .Params.intro }}
+      <p>{{ . }}</p>
+    {{ end }}
+  </section>
+
+  <section class="section" aria-labelledby="skills-title">
+    <div class="section-heading">
+      <h2 id="skills-title">Skills</h2>
+      <p>The tools I reach for most often across application development, internal systems, and automation work.</p>
+    </div>
+    <ul class="skill-list" aria-label="Skills">
+      {{ range .Params.skills }}
+        <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+  </section>
+
+  <section class="section" aria-labelledby="experience-title">
+    <div class="section-heading">
+      <h2 id="experience-title">Experience</h2>
+      <p>A practical path through application development, data automation, reporting, and finance systems.</p>
+    </div>
+    <div class="timeline">
+      {{ range .Params.experience }}
+        <article class="timeline-item">
+          <p class="period">{{ .period }}</p>
+          <h3>{{ .role }}</h3>
+          <p class="organisation">{{ .organisation }}</p>
+          <p>{{ .body }}</p>
+          <p class="tools">{{ .tools }}</p>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+
+  {{ with .Params.education }}
+    <section class="section" aria-labelledby="education-title">
+      <div class="section-heading">
+        <h2 id="education-title">Education</h2>
+        <p></p>
+      </div>
+      <article class="education-note">
+        <img src="{{ .icon }}" alt="" aria-hidden="true">
+        <div>
+          <h3>{{ .credential }}</h3>
+          <p>{{ .institution }} · {{ .location }}</p>
+        </div>
+      </article>
+    </section>
+  {{ end }}
+
+  <section class="section" aria-labelledby="projects-title">
+    <div class="section-heading">
+      <h2 id="projects-title">Projects</h2>
+      <p>Personal software and music work, including Caracal OS and Cult Obsidian.</p>
+    </div>
+    <div class="project-list">
+      {{ range .Params.projects }}
+        <article class="project-item">
+          <h3>{{ .title }}</h3>
+          <p>{{ .body }}</p>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

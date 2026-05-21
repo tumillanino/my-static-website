@@ -1,10 +1,28 @@
-baseURL = 'https://my-static-site.pages.dev/'
+baseURL = 'https://anthonytumia.com/'
 locale = 'en-AU'
 title = 'Anthony Tumia'
-disableKinds = ['rss', 'section', 'taxonomy', 'term']
+disableKinds = ['taxonomy', 'term']
 
 [params]
   locale = 'en-AU'
   contactEmail = 'at.conclude939@passmail.net'
-  description = 'Anthony Tumia is a Sydney-based senior application developer building practical software across React, Next.js, PHP, Go, Power Platform, data automation, and Linux audio tooling.'
+  caracalEmail = 'team@caracal-os.org'
+  githubUrl = 'https://github.com/tumillanino'
+  caracalGithubUrl = 'https://github.com/caracal-dev'
+  youtubeUrl = 'https://www.youtube.com/@tumillanino'
+  profileImage = '/assets/images/anthony-tumia.jpg'
+  description = 'Anthony Tumia is a Sydney-based senior application developer at ANSTO, building government, science, nuclear organisation, internal tooling, automation, React, Next.js, PHP, Go, Power Platform, and Linux audio software.'
   author = 'Anthony Tumia'
+  keywords = [
+    'Anthony Tumia',
+    'Anthony Tumia ANSTO',
+    'ANSTO developer',
+    'government application developer',
+    'nuclear organisation software developer',
+    'science organisation software developer',
+    'Sydney application developer',
+    'React developer Sydney',
+    'Next.js developer Sydney',
+    'Power Platform developer',
+    'Caracal OS'
+  ]

@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    <p class="lede">{{ .Description }}</p>
+  </header>
+
+  <section class="section contact-grid" aria-label="Contact options">
+    <article class="contact-card">
+      <h2>Personal</h2>
+      <p>For personal work enquiries, collaboration, or anything related to the portfolio here, use my personal email.</p>
+      <a class="contact-link" href="mailto:{{ site.Params.contactEmail }}">{{ site.Params.contactEmail }}</a>
+    </article>
+    <article class="contact-card">
+      <h2>Caracal OS</h2>
+      <p>Use this for Caracal OS, Caracal desktop tools, packaging, project questions, or distribution-related enquiries.</p>
+      <a class="contact-link" href="mailto:{{ site.Params.caracalEmail }}">{{ site.Params.caracalEmail }}</a>
+    </article>
+  </section>
+{{ end }}

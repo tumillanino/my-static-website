@@ -2,13 +2,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {{ $title := cond .IsHome site.Title (printf "%s | %s" .Title site.Title) }}
 {{ $description := .Description | default site.Params.description }}
-{{ $image := "/assets/images/anthony-mark.svg" | absURL }}
-{{ $schema := dict "@context" "https://schema.org" "@type" "Person" "name" site.Params.author "jobTitle" "Senior Application Developer" "address" (dict "@type" "PostalAddress" "addressLocality" "Sydney" "addressCountry" "AU") "description" $description "url" site.BaseURL }}
+{{ $image := site.Params.profileImage | absURL }}
+{{ $keywords := .Params.keywords | default site.Params.keywords }}
+{{ $sameAs := slice site.Params.githubUrl site.Params.caracalGithubUrl site.Params.youtubeUrl }}
+{{ $schema := dict
+  "@context" "https://schema.org"
+  "@type" "Person"
+  "name" site.Params.author
+  "alternateName" (slice "Anthony Tumia ANSTO" "tumillanino")
+  "jobTitle" "Senior Application Developer"
+  "worksFor" (dict "@type" "Organization" "name" "ANSTO" "alternateName" "Australian Nuclear Science and Technology Organisation" "url" "https://www.ansto.gov.au/")
+  "alumniOf" (dict "@type" "CollegeOrUniversity" "name" "University of New England" "address" (dict "@type" "PostalAddress" "addressRegion" "NSW" "addressCountry" "AU"))
+  "knowsAbout" (slice "Government application development" "Science organisation software" "Nuclear organisation software systems" "Internal business systems" "React" "Next.js" "PHP" "Go" "Power Platform" "Data automation" "Linux audio tooling" "Caracal OS")
+  "sameAs" $sameAs
+  "image" $image
+  "address" (dict "@type" "PostalAddress" "addressLocality" "Sydney" "addressRegion" "NSW" "addressCountry" "AU")
+  "description" $description
+  "url" site.BaseURL
+}}
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $description }}">
+{{ with $keywords }}<meta name="keywords" content="{{ delimit . `, ` }}">{{ end }}
+<meta name="author" content="{{ site.Params.author }}">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#f7f4ef">
+<meta name="theme-color" content="#f6f7f5">
 <link rel="canonical" href="{{ .Permalink }}">
+<link rel="sitemap" type="application/xml" href="{{ `sitemap.xml` | absURL }}">
 <link rel="icon" href="/assets/images/anthony-mark.svg" type="image/svg+xml">
 <meta property="og:site_name" content="{{ site.Title }}">
 <meta property="og:title" content="{{ $title }}">
@@ -17,11 +36,11 @@
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:image" content="{{ $image }}">
 <meta property="og:locale" content="en_AU">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ $title }}">
 <meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="{{ $image }}">
 <script type="application/ld+json">
 {{ $schema | jsonify (dict "indent" "  ") | safeJS }}
 </script>
 {{ partialCached "head/css.html" . }}
-

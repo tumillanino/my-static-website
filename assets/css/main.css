@@ -1,13 +1,15 @@
 :root {
   color-scheme: light;
-  --bg: #f7f4ef;
-  --surface: #fffdfa;
-  --text: #1f2933;
-  --muted: #5c6670;
-  --line: #ddd5ca;
-  --accent: #a84f35;
-  --accent-soft: #f0ded5;
-  --max-width: 980px;
+  --bg: #f6f7f5;
+  --surface: #ffffff;
+  --text: #1d252c;
+  --muted: #58636d;
+  --line: #d8ded8;
+  --accent: #2f6b57;
+  --accent-strong: #214f41;
+  --accent-soft: #e5f0eb;
+  --ink-soft: #eef1ef;
+  --max-width: 1040px;
 }
 
 * {
@@ -35,13 +37,20 @@ img {
 
 a {
   color: inherit;
-  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  text-decoration-color: color-mix(in srgb, var(--accent) 50%, transparent);
   text-underline-offset: 0.22em;
 }
 
 a:hover,
 a:focus-visible {
   color: var(--accent);
+}
+
+code {
+  padding: 0.15rem 0.3rem;
+  border-radius: 5px;
+  background: var(--ink-soft);
+  font-size: 0.92em;
 }
 
 .site-shell {
@@ -70,6 +79,7 @@ a:focus-visible {
   width: 2.1rem;
   height: 2.1rem;
   border-radius: 8px;
+  object-fit: cover;
 }
 
 .site-nav {
@@ -85,22 +95,25 @@ a:focus-visible {
   text-decoration: none;
 }
 
-.hero {
+.home-panel {
   display: grid;
-  grid-template-columns: 8rem minmax(0, 1fr);
-  gap: 2rem;
+  grid-template-columns: minmax(15rem, 0.38fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 4.5rem);
   align-items: center;
-  padding: clamp(3.5rem, 9vw, 6.5rem) 0 clamp(2rem, 5vw, 4rem);
+  min-height: calc(100vh - 11rem);
+  padding: clamp(2rem, 7vw, 5rem) 0;
 }
 
-.hero-mark {
-  align-self: start;
+.portrait {
+  width: min(100%, 23rem);
+  aspect-ratio: 3 / 4;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 18px 45px rgba(29, 37, 44, 0.16);
 }
 
-.hero-mark img {
-  width: 8rem;
-  border-radius: 24px;
-  box-shadow: 0 18px 50px rgba(31, 41, 51, 0.16);
+.home-copy {
+  max-width: 42rem;
 }
 
 .eyebrow,
@@ -110,7 +123,7 @@ a:focus-visible {
   color: var(--accent);
   font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -122,15 +135,14 @@ p {
 }
 
 h1 {
-  max-width: 11ch;
-  margin-bottom: 1.1rem;
-  font-size: clamp(3.2rem, 10vw, 6rem);
-  line-height: 0.95;
+  margin-bottom: 1rem;
+  font-size: clamp(3rem, 9vw, 5.6rem);
+  line-height: 0.96;
 }
 
 h2 {
   margin-bottom: 0.75rem;
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
   line-height: 1.1;
 }
 
@@ -144,7 +156,48 @@ h3 {
   max-width: 68ch;
   margin-bottom: 0;
   color: var(--muted);
-  font-size: 1.18rem;
+  font-size: 1.16rem;
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.profile-link,
+.contact-link {
+  display: inline-flex;
+  min-height: 3rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.profile-link {
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.15rem;
+  padding: 0.85rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.profile-link small {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.page-header {
+  max-width: 760px;
+  padding: clamp(3rem, 8vw, 5.5rem) 0 clamp(2rem, 5vw, 3.5rem);
+}
+
+.page-header h1 {
+  max-width: 12ch;
 }
 
 .section {
@@ -162,7 +215,10 @@ h3 {
 .section-heading p,
 .prose-section p,
 .timeline-item p,
-.project-item p {
+.project-item p,
+.post-item p,
+.contact-card p,
+.content {
   color: var(--muted);
 }
 
@@ -177,6 +233,8 @@ h3 {
 .prose-section p:last-child,
 .timeline-item p:last-child,
 .project-item p:last-child,
+.post-item p:last-child,
+.contact-card p:last-child,
 .section-heading p:last-child {
   margin-bottom: 0;
 }
@@ -199,17 +257,56 @@ h3 {
 }
 
 .timeline,
-.project-list {
+.project-list,
+.post-list,
+.contact-grid {
   display: grid;
   gap: 1rem;
 }
 
+.contact-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .timeline-item,
-.project-item {
+.project-item,
+.post-item,
+.contact-card {
   padding: 1.3rem;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  background: color-mix(in srgb, var(--surface) 84%, transparent);
+}
+
+.education-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  max-width: 34rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 84%, transparent);
+}
+
+.education-note img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+}
+
+.education-note p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.post-item h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.45rem;
+}
+
+.post-item h2 a {
+  text-decoration: none;
 }
 
 .organisation {
@@ -220,32 +317,46 @@ h3 {
 .tools {
   margin-top: 1rem;
   color: var(--muted);
-  letter-spacing: 0.08em;
-}
-
-.contact-section {
-  padding-bottom: clamp(3rem, 7vw, 5rem);
 }
 
 .contact-link {
-  display: inline-flex;
   align-items: center;
-  min-height: 3rem;
+  max-width: 100%;
+  margin-top: 0.6rem;
   padding: 0.7rem 1rem;
   border: 1px solid var(--accent);
-  border-radius: 8px;
   background: var(--accent);
-  color: #fffdfa;
-  font-weight: 700;
+  color: #ffffff;
   line-height: 1.2;
-  text-decoration: none;
   overflow-wrap: anywhere;
 }
 
 .contact-link:hover,
 .contact-link:focus-visible {
-  background: #8f3f2a;
-  color: #fffdfa;
+  background: var(--accent-strong);
+  color: #ffffff;
+}
+
+.content {
+  max-width: 760px;
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+  font-size: 1.04rem;
+}
+
+.content h2,
+.content h3 {
+  margin-top: 2rem;
+  color: var(--text);
+}
+
+.content a {
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.empty-state {
+  max-width: 62ch;
+  color: var(--muted);
 }
 
 .site-footer {
@@ -263,11 +374,12 @@ h3 {
   margin: 0;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 760px) {
   .site-header,
   .site-footer,
-  .hero,
-  .section-heading {
+  .home-panel,
+  .section-heading,
+  .contact-grid {
     display: block;
   }
 
@@ -276,13 +388,21 @@ h3 {
     margin-top: 1rem;
   }
 
-  .hero-mark {
+  .home-panel {
+    min-height: 0;
+  }
+
+  .portrait {
+    width: min(100%, 18rem);
     margin-bottom: 1.4rem;
   }
 
-  .hero-mark img {
-    width: 5.5rem;
-    border-radius: 18px;
+  .link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card + .contact-card {
+    margin-top: 1rem;
   }
 
   .site-footer a {
