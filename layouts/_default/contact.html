@@ -8,12 +8,32 @@
     <article class="contact-card">
       <h2>Personal</h2>
       <p>For personal work enquiries, collaboration, or anything related to the portfolio here, use my personal email.</p>
-      <a class="contact-link" href="mailto:{{ site.Params.contactEmail }}">{{ site.Params.contactEmail }}</a>
+      <button
+        class="contact-link"
+        type="button"
+        data-email-codes="{{ delimit site.Params.contactEmailCodes `,` }}"
+        aria-label="Reveal personal email address"
+      >
+        <span data-email-label>Show email</span>
+      </button>
+      <noscript>
+        <p class="contact-fallback">Enable JavaScript to reveal this email address.</p>
+      </noscript>
     </article>
     <article class="contact-card">
       <h2>Caracal OS</h2>
       <p>Use this for Caracal OS, Caracal desktop tools, packaging, project questions, or distribution-related enquiries.</p>
-      <a class="contact-link" href="mailto:{{ site.Params.caracalEmail }}">{{ site.Params.caracalEmail }}</a>
+      <button
+        class="contact-link"
+        type="button"
+        data-email-codes="{{ delimit site.Params.caracalEmailCodes `,` }}"
+        aria-label="Reveal Caracal OS email address"
+      >
+        <span data-email-label>Show email</span>
+      </button>
+      <noscript>
+        <p class="contact-fallback">Enable JavaScript to reveal this email address.</p>
+      </noscript>
     </article>
   </section>
 {{ end }}

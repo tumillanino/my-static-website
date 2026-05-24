@@ -321,6 +321,9 @@ h3 {
 
 .contact-link {
   align-items: center;
+  appearance: none;
+  cursor: pointer;
+  font: inherit;
   max-width: 100%;
   margin-top: 0.6rem;
   padding: 0.7rem 1rem;
@@ -329,12 +332,18 @@ h3 {
   color: #ffffff;
   line-height: 1.2;
   overflow-wrap: anywhere;
+  text-align: left;
 }
 
 .contact-link:hover,
 .contact-link:focus-visible {
   background: var(--accent-strong);
   color: #ffffff;
+}
+
+.contact-fallback {
+  margin-top: 0.7rem;
+  overflow-wrap: anywhere;
 }
 
 .content {
