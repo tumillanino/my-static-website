@@ -309,6 +309,16 @@ h3 {
   text-decoration: none;
 }
 
+.project-item h3 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.project-item h3 a:hover,
+.project-item h3 a:focus-visible {
+  color: var(--accent);
+}
+
 .organisation {
   margin-bottom: 0.85rem;
   font-weight: 700;

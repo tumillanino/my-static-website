@@ -49,6 +49,12 @@ experience:
     tools: "SAP ERP, Concur, IBM Cognos, SQL, Excel"
     body: "Supported Concur rollout planning and day-to-day expense management operations. Produced reporting from IBM Cognos and helped maintain finance reporting templates and processes."
 projects:
+  - title: "caracal-os.org"
+    url: "https://caracal-os.org/"
+    body: "A static website for Caracal OS, built with a custom Hugo template I designed."
+  - title: "decorbyhannahs.org"
+    url: "https://decorbyhannahs.org/"
+    body: "A company website for booking party decoration services, built with TanStack, Better Auth, and PostgreSQL."
   - title: "Caracal OS"
     body: "A Linux distribution for music producers, built to reduce the setup friction that often gets in the way when moving audio work to Linux."
   - title: "Caracal desktop tools"

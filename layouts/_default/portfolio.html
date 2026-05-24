@@ -61,12 +61,18 @@
   <section class="section" aria-labelledby="projects-title">
     <div class="section-heading">
       <h2 id="projects-title">Projects</h2>
-      <p>Personal software and music work, including Caracal OS and Cult Obsidian.</p>
+      <p>Selected websites, personal software, and music work, including Caracal OS and Cult Obsidian.</p>
     </div>
     <div class="project-list">
       {{ range .Params.projects }}
         <article class="project-item">
-          <h3>{{ .title }}</h3>
+          <h3>
+            {{ if .url }}
+              <a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>
+            {{ else }}
+              {{ .title }}
+            {{ end }}
+          </h3>
           <p>{{ .body }}</p>
         </article>
       {{ end }}
