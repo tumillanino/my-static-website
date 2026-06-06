@@ -1,9 +1,8 @@
 ---
 title: "Portfolio"
 layout: "portfolio"
-description: "Anthony Tumia's portfolio: senior application developer at ANSTO with experience across government organisations, science and nuclear sector software, React, Next.js, PHP, Go, Power Platform, data automation, and Caracal OS."
+description: "Anthony Tumia's portfolio: senior application developer at ANSTO with experience working across both government and private sectors."
 role: "Senior Application Developer"
-location: "Sydney, Australia"
 summary: "I build practical software for teams that need dependable internal tools, better business processes, and systems that are easier to maintain. My work spans government and science organisation software, React, Next.js, JavaScript, PHP, Go, Power Platform, Python, SQL, and the connective work needed to turn messy workflows into usable applications."
 intro:
   - "I am currently a Senior Application Developer at ANSTO (The Australian Nuclear Science and Technology Organisation), where I lead digitisation projects and maintain enterprise applications across modern and legacy stacks. My work supports a government science organisation with nuclear facilities, and sits between business process, application development, and long-term maintainability: replacing manual forms, improving internal systems, and building reusable components that other project teams can rely on."

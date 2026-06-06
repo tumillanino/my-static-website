@@ -1,6 +1,6 @@
 {{ define "main" }}
   <header class="page-header">
-    <p class="eyebrow">{{ .Params.role }} · {{ .Params.location }}</p>
+    <p class="eyebrow">{{ .Params.role }} · {{ .Params.location | default site.Params.location }}</p>
     <h1>{{ .Title }}</h1>
     <p class="lede">{{ .Params.summary }}</p>
   </header>

@@ -29,6 +29,9 @@
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="sitemap" type="application/xml" href="{{ `sitemap.xml` | absURL }}">
 <link rel="icon" href="/assets/images/anthony-mark.svg" type="image/svg+xml">
+{{ range site.Params.social }}
+<link rel="me" href="{{ .url }}">
+{{ end }}
 <meta property="og:site_name" content="{{ site.Title }}">
 <meta property="og:title" content="{{ $title }}">
 <meta property="og:description" content="{{ $description }}">

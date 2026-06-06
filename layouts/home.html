@@ -2,11 +2,11 @@
   <section class="home-panel" aria-labelledby="page-title">
     <img class="portrait" src="{{ site.Params.profileImage }}" alt="Black and white portrait of Anthony Tumia">
     <div class="home-copy">
-      <p class="eyebrow">{{ .Params.role }} · {{ .Params.location }}</p>
+      <p class="eyebrow">{{ .Params.role }} · {{ .Params.location | default site.Params.location }}</p>
       <h1 id="page-title">{{ .Title }}</h1>
       <p class="lede">{{ .Params.summary }}</p>
       <div class="link-grid" aria-label="Profile links">
-        {{ range .Params.links }}
+        {{ range site.Params.social }}
           <a class="profile-link" href="{{ .url }}" rel="me noopener" target="_blank">
             <span>{{ .label }}</span>
             <small>{{ .note }}</small>
