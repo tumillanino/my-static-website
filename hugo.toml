@@ -27,7 +27,7 @@ disableKinds = ['taxonomy', 'term']
   [[params.social]]
     id = "mastodon"
     label = "Mastodon"
-    url = "https://mastodon.social/@tumillanino"
+    url = "https://mastodon.social/@anthonytumia"
     note = "Follow me on Mastodon"
 
   [[params.social]]
