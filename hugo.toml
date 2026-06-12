@@ -27,7 +27,7 @@ disableKinds = ['taxonomy', 'term']
   [[params.social]]
     id = "mastodon"
     label = "Mastodon"
-    url = "https://mastodon.social/@anthonytumia"
+    url = "https://universeodon.com/@anthonytumia"
     note = "Follow me on Mastodon"
 
   [[params.social]]
@@ -35,6 +35,12 @@ disableKinds = ['taxonomy', 'term']
     label = "YouTube"
     url = "https://www.youtube.com/@tumillanino"
     note = "Cult Obsidian releases and other uploads"
+
+  [[params.social]]
+    id = "bandcamp"
+    label = "Bandcamp"
+    url = "https://cultobsidian.bandcamp.com"
+    note = "Follow Cult Obsidian on Bandcamp"
 
   keywords = [
     'Anthony Tumia',
