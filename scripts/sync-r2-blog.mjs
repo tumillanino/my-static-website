@@ -1,7 +1,7 @@
 import { mkdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-const defaultManifestUrl = "https://blogs.anthonytumia.com/blog/posts.json";
+const defaultManifestUrl = "https://blogs.anthonytumia.com/blog/blog_posts.json";
 const manifestUrl = process.env.BLOG_MANIFEST_URL ?? defaultManifestUrl;
 const defaultPostUrls = "https://blogs.anthonytumia.com/blog/stepping-away-from-social-media.md";
 const postUrls = process.env.BLOG_POST_URLS;
