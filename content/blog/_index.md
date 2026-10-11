@@ -1,5 +1,5 @@
 ---
-title: "Assorted Essays"
+title: "Assorted essays and writings"
 description: "Writing from Anthony Tumia."
 ---
 
